@@ -1,0 +1,53 @@
+DESIGN
+======
+
+Control
+-------
+
+LED Drive
+---------
+
+LEDs will be driven from the Teensy using the OctoWS2811 library, and will
+use the standard OctoWS2811 pinout.
+
+The LED data lines will be driven at 5 volts; since the Teensy operates at 3.3v
+a voltage level translator will be used.
+
+Hardware: a 74HCT245 will be used to translate voltage levels from the Teensy
+@3.3V to TTL voltage levels.
+
+Communication
+-------------
+
+A RS-485 transceiver will be attached to the Teensy on Serial1 for communication.
+During normal operation the Teensy will only be receiving and not sending, but
+for the sake of flexibility and future proofing the Teensy will have the ability
+to drive the line as well, so will have the driver enable line attached to a pin.
+
+TODO: what voltage level should the transceiver run at? We can borrow 3.3v from the
+Teensy, and thus won't have to translate from CMOS to TTL voltage levels.
+
+TODO: should we have a pullup/pulldown resistor here or should we require this to
+be done in software?
+
+Hardware: A MAX485 will be used to drive the RS-485 line. However this exact chip
+is not fixed; the MAX485 shares a common footprint with components from the following
+families:
+
+  * MAX3483E
+  * MAX485
+
+Pin breakout
+------------
+
+OctoWS2811
+
+### RS-485 (Pseudo DMX)
+
+  * Pin 1: gnd
+  * Pin 2: ~B
+  * Pin 3: A
+
+
+Reference: http://interactive-online.com/support/knowledgebase/42-dmx-512/117-dmx-512-connector-pinouts
+
