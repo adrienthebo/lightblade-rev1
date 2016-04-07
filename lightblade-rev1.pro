@@ -1,4 +1,4 @@
-update=Tue 08 Mar 2016 05:35:40 PM PST
+update=Wed 06 Apr 2016 05:45:12 PM PDT
 version=1
 last_client=kicad
 [pcbnew]
@@ -58,5 +58,5 @@ LibName26=opto
 LibName27=atmel
 LibName28=contrib
 LibName29=valves
-LibName30=/home/adrien/personal/kicad/libraries/external/Teensy-3.1/teensy_3.1
-LibName31=sinistral
+LibName30=sinistral
+LibName31=libraries/Teensy-3.1/teensy_3.1
