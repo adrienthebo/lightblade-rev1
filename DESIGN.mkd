@@ -25,7 +25,8 @@ for the sake of flexibility and future proofing the Teensy will have the ability
 to drive the line as well, so will have the driver enable line attached to a pin.
 
 TODO: what voltage level should the transceiver run at? We can borrow 3.3v from the
-Teensy, and thus won't have to translate from CMOS to TTL voltage levels.
+Teensy, and thus won't have to translate from CMOS to TTL voltage levels. Looks like
+the MAX drivers can handle VIH ~2.0V, so we can skip this
 
 TODO: should we have a pullup/pulldown resistor here or should we require this to
 be done in software?
@@ -36,6 +37,9 @@ families:
 
   * MAX3483E
   * MAX485
+
+In specific, we should use the MAX485EPA for the DIP package and extended temperature
+range (-40C - 85C).
 
 Pin breakout
 ------------
